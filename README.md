@@ -1,6 +1,32 @@
 # CSS bundling
+> Bundle CSS and its assets using PostCSS.
 
+## Overview
+This is a practice for bundling CSS and its assets: images, fonts, etc.  
+It's troublesome to bundle CSS files to a single CSS, because CSS can refer external assets and it's often written with relative paths.
+So, we have issues:
+
+- How to resolve relative paths when bundled
+- How to find and copy proper files form packages installed by npm (or Bower)
+
+[PostCSS](https://github.com/postcss/postcss) is a tool for transforming styles and it has many useful plugins to handle codes and assets.  
+Once we set up the bundle task using PostCSS, we can code CSS as usual.
+
+```css
+@import "bootstrap";            /* "bootstrap.css" installed by npm will be bundled automatically! */
+@import "components/ui.css";    /* Local CSS is also bundled! */
+/* And all assets used in "bootstrap" and "ui.css" will automatically be copied to proper directory! */
+
+.index {
+  background-image: url(../img/index.png);    /* Don't be afraid to use relative path! */
+}
+```
+
+## Structure
 ### Source
+`src/css/index.css` is the main CSS file, but it imports sub compoents and npm packages.  
+Each component refers external assets using relative path.
+
 **Directory:**
 ```
 project/
@@ -28,6 +54,10 @@ src/css/index.css
 ```
 
 ### Output
+CSS files are bundled to `dist/css/bundle.css`.  
+It refers a number of external assets and relative paths are resolved automatically.  
+Of course every necessary asset is copied to proper directory in `dist`.
+
 **Directory:**
 ```
 project/
