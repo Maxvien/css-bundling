@@ -1,6 +1,6 @@
 @import "bootstrap";
 @import "components/ui.css";
 
-.bg {
-  background-image: url(../img/bg.png);
+.index {
+  background-image: url(../img/index.png);
 }
