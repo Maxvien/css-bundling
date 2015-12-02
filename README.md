@@ -22,7 +22,7 @@ project/
 project/
 └── dist/
     ├── css/
-    │   └── index.css
+    │   └── bundle.css
     ├── img/
     │   ├── index.png
     │   └── ui.png

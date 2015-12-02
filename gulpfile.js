@@ -13,8 +13,9 @@ gulp.task('css', ['clean'], function () {
       require('postcss-url')({url: 'rebase'}),
       require('postcss-copy-assets')({base: 'dist'})
     ], {
-      to: 'dist/css/index.css'
+      to: 'dist/css/bundle.css'
     }))
+    .pipe($.rename('bundle.css'))
     .pipe(gulp.dest('dist/css'));
 });
 
