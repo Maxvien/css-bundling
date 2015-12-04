@@ -3,11 +3,11 @@
 
 ## Overview
 This is a practice for bundling CSS and its assets: images, fonts, etc.  
-It's troublesome to bundle CSS files to a single CSS, because CSS can refer external assets and it's often written with relative paths.
+It's troublesome to bundle CSS files to a single CSS, because CSS can refer external assets and they are often written with relative paths.
 So, we have issues:
 
 - How to resolve relative paths when bundled
-- How to find and copy proper files form packages installed by npm (or Bower)
+- How to find and copy proper files from packages installed by npm (or Bower)
 
 [PostCSS](https://github.com/postcss/postcss) is a tool for transforming styles and it has many useful plugins to handle codes and assets.  
 Once we set up the bundle task using PostCSS, we can code CSS as usual.
@@ -69,7 +69,7 @@ project/
     │   └── ui.png
     └── node_modules/
         └── bootstrap/
-            └── (necessary assets)
+            └── (necessary assets ONLY)
 ```
 
 **Reference:**
