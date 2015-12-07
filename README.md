@@ -7,7 +7,7 @@ It's troublesome to bundle CSS files to a single CSS, because CSS can refer exte
 So, we have issues:
 
 - How to resolve relative paths when bundled
-- How to find and copy proper files from packages installed by npm (or Bower)
+- How to copy proper assets from packages installed by npm (or Bower)
 
 [PostCSS](https://github.com/postcss/postcss) is a tool for transforming styles and it has many useful plugins to handle codes and assets.  
 Once we set up the bundle task using PostCSS, we can code CSS as usual.
@@ -24,8 +24,8 @@ Once we set up the bundle task using PostCSS, we can code CSS as usual.
 
 ## Structure
 ### Source
-`src/css/index.css` is the main CSS file, but it imports sub compoents and npm packages.  
-Each component refers external assets using relative path.
+`src/css/index.css` is the main CSS file, and it imports sub compoents and npm packages.  
+Each CSS file refers external assets using relative path.
 
 **Directory:**
 ```
